@@ -33,7 +33,7 @@ const gitUserInfo = async function () {
     gitRepos();
 };
 
-const gitRepos = async function () {
+const gitRepos = async function (username) {
   const fetchRepos = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
   const repoData = await fetchRepos.json();
   displayRepos(repoData);
